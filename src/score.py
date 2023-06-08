@@ -8,16 +8,17 @@ class Score(Turtle):
         self.color("white")
         self.hideturtle()
         self.penup()
-        self.setpos(x=0, y=280)
+        self.setpos(x=0, y=250)
 
-        self.points = 0
+        self.player_points = 0
+        self.enemy_points = 0
 
         self.write_score()
 
     def write_score(self):
         self.clear()
-        self.write(f"Score: {self.points}", align="center",
-                   font=('Courier', 14, 'normal'))
+        self.write(f"{self.player_points}   {self.enemy_points}", align="center",
+                   font=('Courier', 30, 'normal'))
 
     def update_score(self):
         self.points += 1
@@ -29,5 +30,5 @@ class Score(Turtle):
         self.write(f"Game Over!", align="center",
                    font=('Courier', 30, 'normal'))
         self.setpos(0, -40)
-        self.write(f"Your final score was: {self.points}", align="center",
+        self.write(f"The final score was: {self.player_points} X {self.enemy_points}", align="center",
                    font=('Courier', 18, 'normal'))

@@ -5,6 +5,7 @@ from score import Score
 
 class GUI():
     def __init__(self):
+        self.is_on = True
         self.screen_setup()
         self.scoreboard_setup()
         self.middle_line_setup()
@@ -38,3 +39,8 @@ class GUI():
             line.forward(20)
             line.penup()
             line.forward(20)
+
+    def game_over(self):
+        self.score.game_over()
+        self.is_on = False
+        self.screen.exitonclick()
