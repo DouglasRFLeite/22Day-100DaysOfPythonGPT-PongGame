@@ -9,7 +9,7 @@ class Enemy(Paddle):
     def __init__(self) -> None:
         super().__init__()
         self.setpos(270, 0)
-        self.move_speed = 1
+        self.move_speed = 2
         self.direction = UP
 
     def move(self):

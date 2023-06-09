@@ -20,8 +20,12 @@ class Score(Turtle):
         self.write(f"{self.player_points}   {self.enemy_points}", align="center",
                    font=('Courier', 30, 'normal'))
 
-    def update_score(self):
-        self.points += 1
+    def player_socres(self):
+        self.player_points += 1
+        self.write_score()
+
+    def enemy_scores(self):
+        self.enemy_points += 1
         self.write_score()
 
     def game_over(self):
